@@ -39,6 +39,13 @@ export default function HomeScreen() {
       icon: "🛍️",
       gradient: ['#FF7043', '#FF5722'],
       route: "ProductList"
+    },
+    {
+      title: "News Reader",
+      description: "Latest news with offline caching", 
+      icon: "📰",
+      gradient: ['#AB47BC', '#9C27B0'],
+      route: "NewsReader"
     }
   ];
 
@@ -101,7 +108,7 @@ export default function HomeScreen() {
           <Text style={styles.statsTitle}>Quick Overview</Text>
           <View style={styles.statsRow}>
             <View style={styles.statItem}>
-              <Text style={styles.statNumber}>3</Text>
+              <Text style={styles.statNumber}>4</Text>
               <Text style={styles.statLabel}>Features</Text>
             </View>
             <View style={styles.statDivider} />

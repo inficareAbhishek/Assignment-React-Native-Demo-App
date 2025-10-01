@@ -7,6 +7,7 @@ import HomeScreen from "../screens/HomeScreen";
 import WeatherScreen from "../screens/WeatherScreen";
 import ExpenseTrackerScreen from "../screens/ExpenseTrackerScreen";
 import ProductListScreen from "../screens/ProductListScreen";
+import NewsReaderScreen from "../screens/NewsReaderScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -18,13 +19,16 @@ const RootNavigator = () => {
     return (
         <Stack.Navigator>
             {token ? (
-                <Stack.Screen name="Home" component={HomeScreen} />
+                <>
+                    <Stack.Screen name="Home" component={HomeScreen} />
+                    <Stack.Screen name="Weather" component={WeatherScreen} />
+                    <Stack.Screen name="ExpenseTracker" component={ExpenseTrackerScreen} options={{ title: "Expense Tracker" }} />
+                    <Stack.Screen name="ProductList" component={ProductListScreen} options={{ title: "Products" }} />
+                    <Stack.Screen name="NewsReader" component={NewsReaderScreen} options={{ title: "News Reader" }} />
+                </>
             ) : (
                 <Stack.Screen name="Login" component={LoginScreen} />
             )}
-            <Stack.Screen name="Weather" component={WeatherScreen} />
-            <Stack.Screen name="ExpenseTracker" component={ExpenseTrackerScreen} options={{ title: "Expense Tracker" }} />
-            <Stack.Screen name="ProductList" component={ProductListScreen} options={{ title: "Products" }} />
         </Stack.Navigator>
 
     );
